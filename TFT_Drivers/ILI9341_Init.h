@@ -245,4 +245,115 @@ begin_tft_write();
 
 writecommand(ILI9341_DISPON); //Display on
 }
+#elif defined (ILI9341_ES3C28P_DRIVER) // Driver for https://www.lcdwiki.com/2.8inch_ESP32-S3_Display
+{
+  writecommand(0xCF);  
+	writedata(0x00); 
+	writedata(0xC1); 
+	writedata(0x30); 
+ 
+	writecommand(0xED);  
+	writedata(0x64); 
+	writedata(0x03); 
+	writedata(0X12); 
+	writedata(0X81); 
+ 
+	writecommand(0xE8);  
+	writedata(0x85); 
+	writedata(0x00); 
+	writedata(0x78); 
+
+	writecommand(0xCB);  
+	writedata(0x39); 
+	writedata(0x2C); 
+	writedata(0x00); 
+	writedata(0x34); 
+	writedata(0x02); 
+	
+	writecommand(0xF7);  
+	writedata(0x20); 
+ 
+	writecommand(0xEA);  
+	writedata(0x00); 
+	writedata(0x00); 
+
+	writecommand(0xC0);       //Power control 
+	writedata(0x13);     //VRH[5:0] 
+ 
+	writecommand(0xC1);       //Power control 
+	writedata(0x13);     //SAP[2:0];BT[3:0] 
+ 
+	writecommand(0xC5);       //VCM control 
+	writedata(0x22);   //22
+	writedata(0x35);   //35
+ 
+	writecommand(0xC7);       //VCM control2 
+	writedata(0xBD);  //AF
+
+	writecommand(0x21);
+
+	writecommand(0x36);       // Memory Access Control 
+	writedata(0x08); 
+
+	writecommand(0xB6);  
+  writedata(0x08);
+  writedata(0x82); 
+
+	writecommand(0x3A);       
+	writedata(0x55); 
+
+	writecommand(0xF6);  //Interface Control
+	writedata(0x01); 
+	writedata(0x30);  //MCU
+
+	writecommand(0xB1);       //VCM control 
+	writedata(0x00); 
+	writedata(0x1B); 
+ 
+	writecommand(0xF2);       // 3Gamma Function Disable 
+	writedata(0x00); 
+ 
+	writecommand(0x26);       //Gamma curve selected 
+	writedata(0x01); 
+ 
+	writecommand(0xE0);       //Set Gamma 
+	writedata(0x0F); 
+	writedata(0x35); 
+	writedata(0x31); 
+	writedata(0x0B); 
+	writedata(0x0E); 
+	writedata(0x06); 
+	writedata(0x49); 
+	writedata(0xA7); 
+	writedata(0x33); 
+	writedata(0x07); 
+	writedata(0x0F); 
+	writedata(0x03); 
+	writedata(0x0C); 
+	writedata(0x0A); 
+	writedata(0x00); 
+ 
+	writecommand(0XE1);       //Set Gamma 
+	writedata(0x00); 
+	writedata(0x0A); 
+	writedata(0x0F); 
+	writedata(0x04); 
+	writedata(0x11); 
+	writedata(0x08); 
+	writedata(0x36); 
+	writedata(0x58); 
+	writedata(0x4D); 
+	writedata(0x07); 
+	writedata(0x10); 
+	writedata(0x0C); 
+	writedata(0x32); 
+	writedata(0x34); 
+	writedata(0x0F); 
+
+	writecommand(0x11);       //Exit Sleep 
+	end_tft_write();
+  delay(120);
+  begin_tft_write();
+	writecommand(0x29);       //Display on 
+}
 #endif

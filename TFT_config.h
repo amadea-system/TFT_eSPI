@@ -44,6 +44,8 @@
     #define ILI9341_DRIVER
 #elif defined (CONFIG_TFT_ILI9341_2_DRIVER)
     #define ILI9341_2_DRIVER
+#elif defined (CONFIG_TFT_ILI9341_ES3C28P_DRIVER)
+    #define ILI9341_ES3C28P_DRIVER
 #elif defined (CONFIG_TFT_ST7735_DRIVER)
     #define ST7735_DRIVER
 #elif defined (CONFIG_TFT_ILI9163_DRIVER)

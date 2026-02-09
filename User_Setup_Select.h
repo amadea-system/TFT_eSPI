@@ -199,7 +199,7 @@
 #endif
 
 // Load the right driver definition - do not tinker here !
-#if   defined (ILI9341_DRIVER) || defined(ILI9341_2_DRIVER) || defined (ILI9342_DRIVER)
+#if   defined (ILI9341_DRIVER) || defined(ILI9341_2_DRIVER) || defined (ILI9342_DRIVER) || defined (ILI9341_ES3C28P_DRIVER)
      #include <TFT_Drivers/ILI9341_Defines.h>
      #define  TFT_DRIVER 0x9341
 #elif defined (ST7735_DRIVER)

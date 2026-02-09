@@ -22,6 +22,10 @@ menu "TFT_eSPI"
             bool "ILI9341 - 2"
             help
                 Alternative ILI9341 driver, see https://github.com/Bodmer/TFT_eSPI/issues/1172
+        config TFT_ILI9341_ES3C28P_DRIVER
+            bool "ILI9341 - ES3C28P"
+             help
+                Driver for ES3C28P TFT display, also known as Cheap Black Display
         config TFT_ST7735_DRIVER
             bool "ST7735"
             help
@@ -71,7 +75,7 @@ menu "TFT_eSPI"
             bool "GC9A01"
     endchoice
 
-    if TFT_ST7735_DRIVER || TFT_ST7789_DRIVER || TFT_ST7789_2_DRIVER || TFT_ILI9341_DRIVER || TFT_ILI9341_2_DRIVER
+    if TFT_ST7735_DRIVER || TFT_ST7789_DRIVER || TFT_ST7789_2_DRIVER || TFT_ILI9341_DRIVER || TFT_ILI9341_2_DRIVER || ILI9341_ES3C28P_DRIVER
         choice TFT_COLOR_ORDER
             prompt "Define the colour order"
             help

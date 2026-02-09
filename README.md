@@ -1,4 +1,11 @@
+# Fork for ES3C28P TFT display
+
+This is a fork of Bodmer's TFT_eSPI library for the ES3C28P TFT display, also known as the "Cheap Black Display". This library provides support for the ES3C28P TFT display, by integrating the necessary library changes from [2.8inch ESP32-S3 Display - LCD wiki](https://www.lcdwiki.com/2.8inch_ESP32-S3_Display).
+
+# Discussions
+
 A ["Discussions"](https://github.com/Bodmer/TFT_eSPI/discussions) facility has been added for Q&A etc. Use the ["Issues"](https://github.com/Bodmer/TFT_eSPI/issues) tab only for problems with the library. Thanks!
+
 # News
 1. The Create_font Processing sketch has been updated to automatically create a complete C header file. The automatic opening of the font folder can also be disabled within the Processing sketch. (Thanks to Pierre-Loup Martin).
 
